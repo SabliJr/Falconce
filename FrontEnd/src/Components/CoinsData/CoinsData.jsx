@@ -3,9 +3,12 @@ import "./CoinsData.css";
 import axios from "axios";
 
 import CoinTable from "../Table/CoinsTable";
+import Pagination from "../Pagination/index";
 
 const CoinsData = () => {
   const [coinsData, setCoinsData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postPerPage] = useState(25);
 
   useEffect(() => {
     axios
@@ -17,7 +20,13 @@ const CoinsData = () => {
         console.log(err);
       });
   }, []);
-  console.log(coinsData);
+
+  //Get current page
+  const indexofLastPage = currentPage * postPerPage;
+  const indexOfFirstPage = indexofLastPage - postPerPage;
+  const currentPages = coinsData.slice(indexOfFirstPage, indexofLastPage);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
     <main>
@@ -33,11 +42,17 @@ const CoinsData = () => {
           </tr>
         </thead>
         <tbody>
-          {coinsData?.map((coin, symbol) => {
+          {currentPages?.map((coin, symbol) => {
             return <CoinTable key={symbol} coin={coin} />;
           })}
         </tbody>
       </table>
+      <Pagination
+        postPerPage={postPerPage}
+        totalPages={coinsData.length}
+        paginate={paginate}
+        currentPage={currentPage}
+      />
     </main>
   );
 };

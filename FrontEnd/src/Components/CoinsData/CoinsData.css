@@ -34,7 +34,7 @@
 .CoinUp {
     background-color: hsla(155, 100%, 82%, 0.829);
     color: hsl(150, 93%, 28%);
-    padding: .5rem 0;
+    padding: .5rem .3rem;
     margin: 0 1rem;
     border-radius: .4rem;
     display: flex;
@@ -43,7 +43,7 @@
 .CoinDown {
     background-color: hsl(0, 80%, 88%);
     color: hsl(0, 93%, 47%);
-    padding: .5rem 0;
+    padding: .5rem .3rem;
     border-radius: .4rem;
     margin: 0 1rem;
     display: flex;
