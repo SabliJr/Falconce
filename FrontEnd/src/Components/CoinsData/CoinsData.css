@@ -1,0 +1,64 @@
+.CoinName {
+    display: grid;
+    gap: .3rem;
+    margin: 1rem;
+    width: 6vw;
+    list-style: none;
+}
+
+.CoinImg {
+    width: 2.3rem;
+}
+
+
+.CoinImgRow {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+.CoinSupply {
+    margin: 3rem;
+    text-align: end;
+    padding-right: 1.8rem;
+}
+
+.CoinCap {
+    list-style: none;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: end;
+}
+
+.CoinUp {
+    background-color: hsla(155, 100%, 82%, 0.829);
+    color: hsl(150, 93%, 28%);
+    padding: .5rem 0;
+    margin: 0 1rem;
+    border-radius: .4rem;
+    display: flex;
+}
+
+.CoinDown {
+    background-color: hsl(0, 80%, 88%);
+    color: hsl(0, 93%, 47%);
+    padding: .5rem 0;
+    border-radius: .4rem;
+    margin: 0 1rem;
+    display: flex;
+}
+
+.coin24Div {
+    position: relative;
+
+}
+
+.Coin24 {
+    padding: 0 1rem;
+}
+
+.priceIcon {
+    font-size: 1.3rem;
+    align-self: center;
+}
