@@ -1,9 +1,15 @@
 import React from "react";
 import "../CoinsData/CoinsData.css";
 
+import millify from "millify";
 import { RiArrowDropDownFill, RiArrowDropUpFill } from "react-icons/ri";
 
 const CoinsTable = ({ coin }) => {
+  let num = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  });
+
   return (
     <tr>
       <td>{coin.market_cap_rank}</td>
@@ -14,7 +20,7 @@ const CoinsTable = ({ coin }) => {
           <li> {coin.symbol.toUpperCase()}</li>
         </div>
       </td>
-      <td className='Prices'> ${coin.current_price.toLocaleString()}</td>
+      <td className='Prices'> {num.format(coin.current_price)}</td>
       <td>
         <div
           className={
@@ -28,7 +34,7 @@ const CoinsTable = ({ coin }) => {
           {coin.price_change_percentage_24h}%
         </div>
       </td>
-      <td className='CoinSupply'>${coin.market_cap.toLocaleString()}</td>
+      <td className='CoinSupply'>${millify(coin.market_cap)}</td>
       <td className='CoinCap'>
         <li>{coin.symbol.toUpperCase()}</li>
         <li> {coin.circulating_supply.toLocaleString()}</li>

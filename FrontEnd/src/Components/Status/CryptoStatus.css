@@ -1,0 +1,16 @@
+.Status_div {
+    margin: 4rem 0 3rem;
+}
+
+.Status_div h2 {
+    margin-bottom: 1rem;
+    color: chocolate;
+    font-size: 1.8rem;
+}
+
+.Status_div p {
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: 1rem;
+    color: rgb(66, 89, 109);
+}
