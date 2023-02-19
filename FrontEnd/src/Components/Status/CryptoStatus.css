@@ -4,13 +4,36 @@
 
 .Status_div h2 {
     margin-bottom: 1rem;
-    color: chocolate;
+    color: rgb(22, 57, 102);
     font-size: 1.8rem;
 }
 
 .Status_div p {
     line-height: 1.5;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1rem;
-    color: rgb(66, 89, 109);
+    color: rgba(51, 69, 86, 0.88);
+    letter-spacing: .5px;
+}
+
+.Status_div span {
+    font-weight: 600;
+}
+
+.statusUp {
+    color: hsl(150, 93%, 28%);
+    display: inline-block;
+}
+
+.statusDown {
+    color: hsl(0, 93%, 47%);
+    display: inline-block;
+    text-align: center;
+}
+
+.statusIcon {
+    font-size: 1.3rem;
+    align-items: center;
+    vertical-align: middle;
+
 }
