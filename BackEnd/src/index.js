@@ -7,6 +7,7 @@ require("dotenv").config();
 const app = express();
 app.use(cors());
 
+//Getting the coins data
 app.get("/coins", (req, resp) => {
   const options = {
     method: "GET",
@@ -26,7 +27,6 @@ app.get("/coins", (req, resp) => {
   axios
     .request(options)
     .then((response) => {
-      console.log(response.data);
       resp.json(response.data);
     })
     .catch((error) => {
@@ -34,4 +34,48 @@ app.get("/coins", (req, resp) => {
     });
 });
 
-app.listen(PORT, () => console.log(`server started running at port ${PORT}`));
+// Getting the global status
+app.get('/global-status', (req, resp) =>
+{
+  const options = {
+    method: "GET",
+    url: "https://pro-api.coinmarketcap.com/v1/global-metrics/quotes/latest",
+    headers: {
+      "X-CMC_PRO_API_KEY": process.env.MARKET_CAP_API_KEY,
+    },
+  };
+
+  axios
+    .request(options)
+    .then((response) => {
+      resp.json(response.data)
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+})
+
+// app.get("/global-status", (req, resp) => {
+//   const options = {
+//     method: "GET",
+//     url: "https://coingecko.p.rapidapi.com/global",
+//     headers: {
+//       "X-RapidAPI-Key": process.env.RAPID_API_KEY,
+//       "X-RapidAPI-Host": "coingecko.p.rapidapi.com",
+//     },
+//   };
+
+//   axios
+//     .request(options)
+//     .then((response) => {
+//       resp.json(response.data);
+//     })
+//     .catch((error) => {
+//       console.error(error);
+//     });
+// });
+
+https: app.listen(PORT, () =>
+  console.log(`server started running at port ${PORT}`)
+);
+  
