@@ -22,7 +22,7 @@ const CryptoNews = () => {
   return (
     <section className='newsSection'>
       <h2 className='newsTitle'> Crypto News </h2>
-      {getNewsResult.slice(0, 5)?.map((article) => {
+      {getNewsResult?.map((article) => {
         if (article.imgURL === undefined) {
           return null;
         } else {

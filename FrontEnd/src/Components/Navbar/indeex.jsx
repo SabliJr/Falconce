@@ -3,15 +3,15 @@ import "./Navbar.css";
 
 //Icons
 import { BiSearch } from "react-icons/bi";
-import { GiFlamingArrow } from "react-icons/gi";
+import { SiFalcon } from "react-icons/si";
 import { CgMenuGridO } from "react-icons/cg";
 
 const Navbar = () => {
   return (
     <nav className='NavBar'>
       <div className='LogoDiv'>
-        <GiFlamingArrow className='LogoIcon' />
-        <h1 className='Logo'>GellyCoin</h1>
+        <SiFalcon className='LogoIcon' />
+        <h1 className='Logo'>Falconce</h1>
       </div>
       <div className='MenuDiv'>
         <div className='SearchDiv'>

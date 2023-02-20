@@ -5,6 +5,7 @@ import Navbar from "./Components/Navbar/indeex";
 import CoinsData from "./Components/CoinsData/CoinsData";
 import CryptoStatus from "./Components/Status/CryptoStatus";
 import CryptoNews from "./News/CryptoNews";
+import TheFooter from "./Components/Footer/TheFooter";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <CoinsData />
           <CryptoNews />
         </article>
+        <TheFooter />
       </main>
     </>
   );
