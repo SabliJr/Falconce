@@ -60,7 +60,7 @@ app.get('/global-status', (req, resp) =>
 app.get("/news", (req, resp) => {
   const config = {
     method: "get",
-    url: "https://api.coinstats.app/public/v1/news/trending?skip=0&limit=15",
+    url: "https://api.coinstats.app/public/v1/news/trending?skip=0&limit=5",
     headers: {},
   };
 
