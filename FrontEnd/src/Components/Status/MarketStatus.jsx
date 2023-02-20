@@ -8,7 +8,7 @@ const MarketStatus = ({ gs }) => {
   return (
     <>
       <h2>Today's Cryptocurrency Prices by Market Cap!</h2>
-      <p>
+      <div className='statusText'>
         The active Cryptocurrencies are &nbsp;
         <span>{gs.active_cryptocurrencies.toLocaleString()}</span>&nbsp;
         across&nbsp;
@@ -46,17 +46,10 @@ const MarketStatus = ({ gs }) => {
           {gs.btc_dominance_24h_percentage_change.toLocaleString()}%
         </div>
         &nbsp; as well over the day.
-      </p>
+      </div>
     </>
   );
 };
 
 export default MarketStatus;
 
-/* <p>
-  The active Cryptocurrencies are <span></span> across <span></span>
-  markets globally, with a total market cap of <span></span>, an increase of{" "}
-  <span></span>.
-  The global crypto market cap is $1.12T, a 2.28%
-        increase over the last day. 
-</p>; */

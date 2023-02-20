@@ -4,11 +4,11 @@
 
 .Status_div h2 {
     margin-bottom: 1rem;
-    color: rgb(22, 57, 102);
+    color: rgb(32, 70, 119);
     font-size: 1.8rem;
 }
 
-.Status_div p {
+.statusText {
     line-height: 1.5;
     font-weight: 600;
     font-size: 1rem;
