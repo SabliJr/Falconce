@@ -55,27 +55,23 @@ app.get('/global-status', (req, resp) =>
     });
 })
 
-// app.get("/global-status", (req, resp) => {
-//   const options = {
-//     method: "GET",
-//     url: "https://coingecko.p.rapidapi.com/global",
-//     headers: {
-//       "X-RapidAPI-Key": process.env.RAPID_API_KEY,
-//       "X-RapidAPI-Host": "coingecko.p.rapidapi.com",
-//     },
-//   };
 
-//   axios
-//     .request(options)
-//     .then((response) => {
-//       resp.json(response.data);
-//     })
-//     .catch((error) => {
-//       console.error(error);
-//     });
-// });
 
-https: app.listen(PORT, () =>
-  console.log(`server started running at port ${PORT}`)
-);
+app.get("/news", (req, resp) => {
+  const config = {
+    method: "get",
+    url: "https://api.coinstats.app/public/v1/news/trending?skip=0&limit=15",
+    headers: {},
+  };
+
+  axios(config)
+    .then((response) => {
+      resp.json(response.data);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+});
+
+app.listen(PORT, () => console.log(`server started running at port ${PORT}`));
   

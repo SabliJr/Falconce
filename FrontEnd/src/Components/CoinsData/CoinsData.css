@@ -1,3 +1,16 @@
+.tableMain {
+    width: 70%;
+}
+
+.coinsTable {
+    width: 100%;
+}
+
+.tableTitle {
+    margin: 1rem 0;
+    color: chocolate;
+}
+
 .CoinName {
     display: grid;
     gap: .3rem;

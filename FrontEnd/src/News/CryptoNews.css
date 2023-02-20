@@ -1,0 +1,46 @@
+.newsTitle {
+    margin: 1rem 0;
+    color: chocolate;
+}
+
+.newsSection {
+    width: 100%;
+}
+
+.articleImg {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.articleDiv {
+    width: 100%;
+    min-width: 15.625rem;
+    padding: 0.625rem 0.75rem;
+    border: 1px solid #cce7d0;
+    border-radius: 1rem;
+    margin: 0.9375rem 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-shadow: 1.25rem 1.25rem 1.875rem rgba(0, 0, 0, 0.02);
+}
+
+.articleDiv h3 {
+    cursor: pointer;
+}
+
+.articleDiv p {
+    color: rgba(51, 69, 86, 0.88);
+
+}
+
+h6 {
+    color: chocolate;
+    font-weight: 400;
+}
+
+.articleDiv a {
+    text-decoration: none;
+    color: rgb(32, 70, 119);
+}

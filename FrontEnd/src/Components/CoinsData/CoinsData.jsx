@@ -29,8 +29,11 @@ const CoinsData = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <main>
-      <table>
+    <main className='tableMain'>
+      <h2 className='tableTitle'>
+        The Top 250 Active Cryptocurrencies In the Market
+      </h2>
+      <table className='coinsTable'>
         <thead>
           <tr>
             <th>Rank</th>

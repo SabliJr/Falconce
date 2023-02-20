@@ -4,6 +4,7 @@ import "./index.css";
 import Navbar from "./Components/Navbar/indeex";
 import CoinsData from "./Components/CoinsData/CoinsData";
 import CryptoStatus from "./Components/Status/CryptoStatus";
+import CryptoNews from "./News/CryptoNews";
 
 const App = () => {
   return (
@@ -13,7 +14,10 @@ const App = () => {
       </div>
       <main className='mainApp'>
         <CryptoStatus />
-        <CoinsData />
+        <article className='mainArt'>
+          <CoinsData />
+          <CryptoNews />
+        </article>
       </main>
     </>
   );
