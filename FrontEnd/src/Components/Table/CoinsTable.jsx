@@ -1,5 +1,6 @@
 import React from "react";
 import "../CoinsData/CoinsData.css";
+import { useNavigate } from "react-router-dom";
 
 import millify from "millify";
 import { RiArrowDropDownFill, RiArrowDropUpFill } from "react-icons/ri";
@@ -10,10 +11,19 @@ const CoinsTable = ({ coin }) => {
     currency: "USD",
   });
 
+  let navigate = useNavigate();
+  let clickedCoin = (id) => {
+    navigate(`coin-page/${id}`);
+  };
+
   return (
     <tr>
       <td>{coin.market_cap_rank}</td>
-      <td className='CoinImgRow'>
+      <td
+        className='CoinImgRow'
+        onClick={() => {
+          clickedCoin(coin.id);
+        }}>
         <img src={coin.image} alt='CoinImg' className='CoinImg' />
         <div className='CoinName'>
           <li>{coin.name}</li>
