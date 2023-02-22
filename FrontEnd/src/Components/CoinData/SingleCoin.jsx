@@ -2,6 +2,11 @@ import React, { useEffect, useState } from "react";
 import "./SingleCoin.css";
 import axios from "axios";
 
+//Components
+import CoinHeader from "./CoinHeader";
+import CoinMoney from "./CoinMoney";
+import CoinDesc from "./CoinDesc";
+
 const SingleCoin = () => {
   const [coinInfo, setCoinInfo] = useState([]);
   let getCoinId = window.location.pathname.split("/");
@@ -17,12 +22,15 @@ const SingleCoin = () => {
         console.log(err);
       });
   }, [coinId]);
-  console.log(coinInfo.market_data);
+  // const resultDuCoinInfo = Object.values(coinInfo);
+  console.log(coinInfo);
 
   return (
-    <main>
-      <h2>This is the page of {coinId}</h2>
-    </main>
+    <>
+      <CoinHeader coin={coinInfo} />
+      <CoinMoney coin={coinInfo} />
+      <CoinDesc coin={coinInfo} />
+    </>
   );
 };
 
