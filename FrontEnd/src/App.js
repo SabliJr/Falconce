@@ -1,27 +1,22 @@
 import "./index.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 //Components
+import HomePage from "./Pages/HomePage";
 import Navbar from "./Components/Navbar/indeex";
-import CoinsData from "./Components/CoinsData/CoinsData";
-import CryptoStatus from "./Components/Status/CryptoStatus";
-import CryptoNews from "./News/CryptoNews";
-import TheFooter from "./Components/Footer/TheFooter";
+import CoinPage from "./Pages/CoinPage";
 
 const App = () => {
   return (
-    <>
+    <Router>
       <div className='App'>
         <Navbar />
       </div>
-      <main className='mainApp'>
-        <CryptoStatus />
-        <article className='mainArt'>
-          <CoinsData />
-          <CryptoNews />
-        </article>
-        <TheFooter />
-      </main>
-    </>
+      <Routes>
+        <Route path='/' exact element={<HomePage />} />
+        <Route path='/coin-page/:id' exact element={<CoinPage />} />
+      </Routes>
+    </Router>
   );
 };
 

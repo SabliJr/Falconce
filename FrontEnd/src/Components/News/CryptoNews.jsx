@@ -26,7 +26,7 @@ const CryptoNews = () => {
         if (article.imgURL === undefined) {
           return null;
         } else {
-          return <Article article={article} />;
+          return <Article key={article.id} article={article} />;
         }
       })}
     </section>

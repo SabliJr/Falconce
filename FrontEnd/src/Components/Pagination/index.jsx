@@ -11,15 +11,13 @@ const Index = ({ postPerPage, totalPages, paginate, currentPage }) => {
   return (
     <ul className='pagination'>
       {postNumbers.map((number) => (
-        <li key={number}>
-          <a
-            onClick={() => paginate(number)}
-            href='!#'
-            className={
-              number === currentPage ? " active PaginateNum" : "PaginateNum"
-            }>
-            {number}
-          </a>
+        <li
+          key={number}
+          onClick={() => paginate(number)}
+          className={
+            number === currentPage ? " active PaginateNum" : "PaginateNum"
+          }>
+          {number}
         </li>
       ))}
     </ul>
