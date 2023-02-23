@@ -103,5 +103,116 @@ app.get("/coin", (req, resp) => {
     });
 });
 
+const date = new Date();
+let currentTime = Math.floor(date.getTime() / 1000);
+let oneDay = currentTime - 24 * 60 * 60;
+let oneWeek = 7 * 24 * 60 * 60;
+let oneMonth = 30 * 24 * 60 * 60;
+let oneYear = 365 * 24 * 60 * 60;
+
+app.get("/one-day", (req, resp) => {
+  const symbol = req.query.symbol;
+  const options = {
+    method: "GET",
+    url: `https://coingecko.p.rapidapi.com/coins/${symbol}/market_chart/range`,
+    params: {
+      from: oneDay,
+      vs_currency: "usd",
+      to: currentTime,
+    },
+    headers: {
+      "X-RapidAPI-Key": process.env.RAPID_API_KEY,
+      "X-RapidAPI-Host": "coingecko.p.rapidapi.com",
+    },
+  };
+
+  axios
+    .request(options)
+    .then((response) => {
+      resp.json(response.data);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+});
+
+app.get("/one-week", (req, resp) => {
+  const symbol = req.query.symbol;
+  const options = {
+    method: "GET",
+    url: `https://coingecko.p.rapidapi.com/coins/${symbol}/market_chart/range`,
+    params: {
+      from: oneWeek,
+      vs_currency: "usd",
+      to: currentTime,
+    },
+    headers: {
+      "X-RapidAPI-Key": process.env.RAPID_API_KEY,
+      "X-RapidAPI-Host": "coingecko.p.rapidapi.com",
+    },
+  };
+
+  axios
+    .request(options)
+    .then((response) => {
+      resp.json(response.data);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+});
+
+app.get("/one-month", (req, resp) => {
+  const symbol = req.query.symbol;
+  const options = {
+    method: "GET",
+    url: `https://coingecko.p.rapidapi.com/coins/${symbol}/market_chart/range`,
+    params: {
+      from: oneMonth,
+      vs_currency: "usd",
+      to: currentTime,
+    },
+    headers: {
+      "X-RapidAPI-Key": process.env.RAPID_API_KEY,
+      "X-RapidAPI-Host": "coingecko.p.rapidapi.com",
+    },
+  };
+
+  axios
+    .request(options)
+    .then((response) => {
+      resp.json(response.data);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+});
+
+app.get("/one-year", (req, resp) => {
+  const symbol = req.query.symbol;
+  const options = {
+    method: "GET",
+    url: `https://coingecko.p.rapidapi.com/coins/${symbol}/market_chart/range`,
+    params: {
+      from: oneYear,
+      vs_currency: "usd",
+      to: currentTime,
+    },
+    headers: {
+      "X-RapidAPI-Key": process.env.RAPID_API_KEY,
+      "X-RapidAPI-Host": "coingecko.p.rapidapi.com",
+    },
+  };
+
+  axios
+    .request(options)
+    .then((response) => {
+      resp.json(response.data);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+});
+
 app.listen(PORT, () => console.log(`server started running at port ${PORT}`));
   
