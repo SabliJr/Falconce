@@ -5,7 +5,7 @@ import { RiArrowDropDownFill, RiArrowDropUpFill } from "react-icons/ri";
 
 const CoinMoney = ({ coin }) => {
   return (
-    <div className='numDivs'>
+    <div className='numDiv'>
       {/* The Volume */}
       <div className='totalVol allCenter'>
         <p className='numDivP'>Total Volume</p>

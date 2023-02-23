@@ -6,6 +6,7 @@ import axios from "axios";
 import CoinHeader from "./CoinHeader";
 import CoinMoney from "./CoinMoney";
 import CoinDesc from "./CoinDesc";
+import ChartData from "../CoinChart/ChartData";
 
 const SingleCoin = () => {
   const [coinInfo, setCoinInfo] = useState([]);
@@ -23,12 +24,13 @@ const SingleCoin = () => {
       });
   }, [coinId]);
   // const resultDuCoinInfo = Object.values(coinInfo);
-  console.log(coinInfo);
+  // console.log(coinInfo);
 
   return (
     <>
       <CoinHeader coin={coinInfo} />
       <CoinMoney coin={coinInfo} />
+      <ChartData symbol={coinId} />
       <CoinDesc coin={coinInfo} />
     </>
   );

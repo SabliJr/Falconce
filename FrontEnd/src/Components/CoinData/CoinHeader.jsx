@@ -8,7 +8,6 @@ const CoinHeader = ({ coin }) => {
     style: "currency",
     currency: "USD",
   });
-  //   console.log(coin.market_data.current_price.usd);
 
   return (
     <div className='coinHeader'>
