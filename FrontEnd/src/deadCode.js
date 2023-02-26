@@ -245,26 +245,76 @@ export default Chart;
 //     });
 // });
 
-// import {
-//   Chart as ChartJS,
-//   CategoryScale,
-//   LinearScale,
-//   PointElement,
-//   LineElement,
-//   Title,
-//   Tooltip,
-//   Filler,
-//   Legend,
-// } from "chart.js";
-// import { Line } from "react-chartjs-2";
 
-// ChartJS.register(
-//   CategoryScale,
-//   LinearScale,
-//   PointElement,
-//   LineElement,
-//   Title,
-//   Tooltip,
-//   Filler,
-//   Legend
-// );
+
+//Getting Chart Data
+// app.get("/daily-data", (req, res) => {
+//   const symbol = req.query.symbol;
+
+//   const options = {
+//     method: "GET",
+//     url: `https://coingecko.p.rapidapi.com/coins/${symbol}/market_chart`,
+//     params: { vs_currency: "usd", days: "1" },
+//     headers: {
+//       "X-RapidAPI-Key": process.env.RAPID_API_KEY,
+//       "X-RapidAPI-Host": "coingecko.p.rapidapi.com",
+//     },
+//   };
+
+//   axios
+//     .request(options)
+//     .then( (response) => {
+//       res.json(response.data);
+//     })
+//     .catch( (error) => {
+//       console.error(error);
+//     });
+// });
+
+// app.get("/weekly-data", (req, res) => {
+//   const symbol = req.query.symbol;
+  
+//   const options = {
+//     method: "GET",
+//     url: `https://coingecko.p.rapidapi.com/coins/${symbol}/market_chart`,
+//     params: { vs_currency: "usd", days: "7"},
+//     headers: {
+//       "X-RapidAPI-Key": process.env.RAPID_API_KEY,
+//       "X-RapidAPI-Host": "coingecko.p.rapidapi.com",
+//     },
+//   };
+
+//   axios
+//     .request(options)  
+//     .then( (response) => {
+//       res.json(response.data);
+//     })
+//     .catch( (error) => {
+//       console.error(error);
+//     });
+// });
+
+// app.get("/monthly-data", (req, res) => {
+//     const symbol = req.query.symbol;
+
+//   const options = {
+//     method: "GET",
+//     url: `https://coingecko.p.rapidapi.com/coins/${symbol}/market_chart`,
+//     params: { vs_currency: "usd", days: "30", interval: 'daily'},
+//     headers: {
+//       "X-RapidAPI-Key": process.env.RAPID_API_KEY,
+//       "X-RapidAPI-Host": "coingecko.p.rapidapi.com",
+//     },
+//   };
+
+//   axios
+//     .request(options)
+//     .then( (response) => {
+//       res.json(response.data);
+//     })
+//     .catch( (error) => {
+//       console.error(error);
+//     });
+// });
+
+

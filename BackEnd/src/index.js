@@ -103,5 +103,28 @@ app.get("/coin", (req, resp) => {
     });
 });
 
+app.get("/three-months", (req, res) => {
+  const symbol = req.query.symbol;
+
+  const options = {
+    method: "GET",
+    url: `https://coingecko.p.rapidapi.com/coins/${symbol}/market_chart`,
+    params: { vs_currency: "usd", days: "90", interval: "daily" },
+    headers: {
+      "X-RapidAPI-Key": process.env.RAPID_API_KEY,
+      "X-RapidAPI-Host": "coingecko.p.rapidapi.com",
+    },
+  };
+
+  axios
+    .request(options)
+    .then((response) => {
+      res.json(response.data);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+});
+
 app.listen(PORT, () => console.log(`server started running at port ${PORT}`));
   
