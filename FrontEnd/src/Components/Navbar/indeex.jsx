@@ -21,7 +21,7 @@ const Navbar = () => {
       </div>
       <div className='MenuDiv'>
         <div className='SearchDiv'>
-          <input type='text' placeholder='Crypto, stocks ...' />
+          <input type='text' placeholder='Crypto prices, news...' />
           <BiSearch className='SearchIcon' />
         </div>
       </div>

@@ -44,8 +44,8 @@ const CoinsTable = ({ coin }) => {
           {coin.price_change_percentage_24h}%
         </div>
       </td>
-      <td className='CoinSupply'>${millify(coin.market_cap)}</td>
-      <td className='CoinCap'>
+      <td className='CoinSupply removeRow'>${millify(coin.market_cap)}</td>
+      <td className='CoinCap removeRow'>
         <li>{coin.symbol.toUpperCase()}</li>
         <li> {coin.circulating_supply.toLocaleString()}</li>
       </td>

@@ -9,6 +9,8 @@ const CoinsData = () => {
   const [coinsData, setCoinsData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [postPerPage] = useState(25);
+  const [offsetScroll, setOffsetScroll] = useState(0);
+  // const [scrollFixed, setScrollFixed] = useState(false);
 
   useEffect(() => {
     axios
@@ -28,20 +30,32 @@ const CoinsData = () => {
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
+  // const scrolling = window.screenY.target;
+  // console.log(scrolling);
+
+  useEffect(() => {
+    const onScroll = () => setOffsetScroll(window.pageYOffset);
+    // clean up code
+    // window.removeEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  // console.log(offsetScroll);
+
   return (
     <main className='tableMain'>
       <h2 className='tableTitle'>
         The Top 250 Active Cryptocurrencies In the Market
       </h2>
       <table className='coinsTable'>
-        <thead>
+        <thead className={offsetScroll === 297.5 ? null : "stickTable"}>
           <tr>
-            <th>Rank</th>
+            <th>#</th>
             <th className='CoinName'>Name</th>
             <th className='CoinPrice'>Price</th>
             <th className='Coin24'>24h%</th>
-            <th className='CoinSupply'>MarketCap</th>
-            <th className='CoinCap'> Circulating supply</th>
+            <th className='CoinSupply removeRow'>MarketCap</th>
+            <th className='CoinCap removeRow'> Circulating supply</th>
           </tr>
         </thead>
         <tbody>

@@ -15,7 +15,6 @@
     display: grid;
     gap: .3rem;
     margin: 1rem;
-    width: 6vw;
     list-style: none;
 }
 
@@ -77,4 +76,69 @@
 .priceIcon {
     font-size: 1.3rem;
     align-self: center;
+}
+
+.stickTable {
+    position: sticky;
+    top: 4rem;
+    left: 0;
+    color: rgba(51, 69, 86, 0.88);
+    background-color: #f1f4f6;
+}
+
+@media screen and (max-width: 1100px) {
+    .tableMain {
+        width: 100%;
+        padding: 0 .5rem;
+    }
+
+    .removeRowT {
+        display: none;
+    }
+
+    @media screen and (max-width: 700px) {
+        .tableTitle {
+            margin: 1rem 1rem 0;
+            font-size: 1rem;
+        }
+
+        .removeRow {
+            display: none;
+        }
+
+        .CoinName {
+            display: grid;
+            gap: .3rem;
+            margin: .8rem;
+            list-style: none;
+        }
+
+        .CoinUp {
+            padding: .1rem;
+            border-radius: .2rem;
+            margin: 0 .4rem;
+        }
+
+        .CoinDown {
+            padding: .1rem;
+            border-radius: .2rem;
+            margin: 0 .4rem;
+        }
+
+        .CoinImg {
+            width: 2rem;
+            padding: 0 .2rem;
+        }
+
+
+        .Coin24 {
+            padding: 0 .3rem;
+        }
+
+        .stickTable {
+            top: 4rem;
+        }
+
+
+    }
 }

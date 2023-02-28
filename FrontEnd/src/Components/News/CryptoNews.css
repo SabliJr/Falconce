@@ -44,3 +44,17 @@ h6 {
     text-decoration: none;
     color: rgb(32, 70, 119);
 }
+
+@media screen and (max-width: 1100px) {
+    @media screen and (max-width: 700px) {
+        .newsTitle {
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        .newsSection {
+            width: 100%;
+            padding: 1rem;
+        }
+    }
+}

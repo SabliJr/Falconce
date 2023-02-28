@@ -110,10 +110,42 @@
 }
 
 .coinDesc h2 {
-    color: rgb(32, 70, 119);
+    color: chocolate;
     margin: 1.5rem 0;
 }
 
 .coinDesc p {
     color: rgba(51, 69, 86, 0.88);
+}
+
+@media screen and (max-width: 1100px) {
+    @media screen and (max-width: 700px) {
+        .coinHeader {
+            margin: 3rem 0 2rem;
+        }
+
+        .headerP {
+            font-size: 1rem;
+        }
+
+        .coinNameP {
+            margin-bottom: .4rem;
+        }
+
+        .coinImg {
+            width: 4rem;
+        }
+
+        .numDiv {
+            flex-direction: column;
+            gap: 2rem;
+            margin: 0 1.3rem;
+        }
+
+        .coinDesc {
+            margin: 3rem 1.3rem;
+            overflow: hidden;
+        }
+
+    }
 }
