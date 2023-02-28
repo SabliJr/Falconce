@@ -82,7 +82,7 @@
         .socialArt {
             margin-top: 0;
             margin-right: 0;
-            display: gird;
+            /* display: gird; */
             position: absolute;
             right: 1rem;
         }
@@ -117,7 +117,8 @@
 
         .socialArt h3 {
             font-size: .8rem;
-            margin-bottom: .2rem;
+            margin-bottom: 0.2rem;
+            padding: 0;
         }
 
         .socialIcon {
