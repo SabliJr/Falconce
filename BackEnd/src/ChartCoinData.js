@@ -1,8 +1,10 @@
-const axios = require("axios");
+const express = require("express");
+const cors = require("cors");
 
-export default axios.create({
-  baseURL: "https://coingecko.p.rapidapi.com",
-});
+const app = express();
+app.use(cors());
+
+const CoinGecko = require("API");
 
 app.get("/chart-data", (req, resp) => {
   const fetchData = async () => {
