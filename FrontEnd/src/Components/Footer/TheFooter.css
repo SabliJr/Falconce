@@ -3,11 +3,13 @@
     display: flex;
     justify-content: space-between;
     position: relative;
+    overflow: hidden;
 }
 
 .mailSubs {
     width: 35vw;
     text-align: center;
+    overflow: hidden;
 }
 
 .mailSubs h3,
@@ -27,6 +29,7 @@
     background-color: rgba(51, 69, 87, 0.2);
     border-radius: .4rem;
     margin: 1rem .5rem;
+    overflow: hidden;
 }
 
 .socialArt {
@@ -71,6 +74,20 @@
 }
 
 @media screen and (max-width: 1100px) {
+    .footer {
+        margin: 3rem 2rem 1rem;
+        position: relative;
+    }
+
+    .FooterLogo,
+    .FooterIcon {
+        font-size: 1.4rem;
+    }
+
+    .mailSubs {
+        width: 50%;
+    }
+
     @media screen and (max-width: 700px) {
         .footer {
             width: 100%;
@@ -82,7 +99,7 @@
         .socialArt {
             margin-top: 0;
             margin-right: 0;
-            /* display: gird; */
+            display: gird;
             position: absolute;
             right: 1rem;
         }

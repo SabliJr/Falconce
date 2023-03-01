@@ -46,15 +46,58 @@ h6 {
 }
 
 @media screen and (max-width: 1100px) {
-    @media screen and (max-width: 700px) {
-        .newsTitle {
-            margin: 1rem 0;
-            text-align: center;
+    .newsSection {
+        width: 90%;
+        margin: 0 auto;
+
+    }
+
+    .newRap {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows:
+            "fir fir 2en"
+            "fir fir 2en";
+    }
+
+    .articleDiv {
+        width: 28vw;
+        grid-area: 2rn;
+    }
+
+    @media only screen and (max-width: 900px) {
+        .newRap {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            justify-items: center;
+
         }
 
-        .newsSection {
-            width: 100%;
-            padding: 1rem;
+        .articleDiv {
+            width: 40vw;
+            grid-area: 2rn;
         }
+
+        @media screen and (max-width: 700px) {
+            .newsTitle {
+                margin: 1rem 0;
+                text-align: center;
+            }
+
+            .newsSection {
+                width: 100%;
+                padding: 1rem;
+            }
+
+            .newRap {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .articleDiv {
+                width: 80vw;
+            }
+        }
+
     }
 }
