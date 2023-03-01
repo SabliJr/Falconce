@@ -1,37 +1,30 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import "./CryptoNews.css";
-import axios from "axios";
 
+import { dataContext } from "../../Context/GlobalDataProvider";
 import Article from "./Article";
 
 const CryptoNews = () => {
-  const [getNews, setGetNews] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:8800/news")
-      .then((res) => {
-        setGetNews(res.data.news);
-      })
-      .then((err) => {
-        console.log(err);
-      });
-  }, []);
+  const { getNews, coinsData } = useContext(dataContext);
   const getNewsResult = Object.values(getNews);
 
   return (
-    <section className='newsSection'>
-      <h2 className='newsTitle'> Crypto News </h2>
-      <div className='newRap'>
-        {getNewsResult?.map((article) => {
-          if (article.imgURL === undefined) {
-            return null;
-          } else {
-            return <Article key={article.id} article={article} />;
-          }
-        })}
-      </div>
-    </section>
+    <>
+      {getNews && coinsData && (
+        <section className='newsSection'>
+          <h2 className='newsTitle'> Crypto News </h2>
+          <div className='newRap'>
+            {getNewsResult?.map((article) => {
+              if (article.imgURL === undefined) {
+                return null;
+              } else {
+                return <Article key={article.id} article={article} />;
+              }
+            })}
+          </div>
+        </section>
+      )}
+    </>
   );
 };
 
