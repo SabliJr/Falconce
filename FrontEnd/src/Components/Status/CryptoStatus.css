@@ -38,6 +38,10 @@
 }
 
 @media screen and (max-width: 1100px) {
+    .Status_div {
+        margin: 4rem 3rem;
+    }
+
     @media screen and (max-width: 700px) {
         .Status_div {
             margin: 1rem;

@@ -22,13 +22,15 @@ const CryptoNews = () => {
   return (
     <section className='newsSection'>
       <h2 className='newsTitle'> Crypto News </h2>
-      {getNewsResult?.map((article) => {
-        if (article.imgURL === undefined) {
-          return null;
-        } else {
-          return <Article key={article.id} article={article} />;
-        }
-      })}
+      <div className='newRap'>
+        {getNewsResult?.map((article) => {
+          if (article.imgURL === undefined) {
+            return null;
+          } else {
+            return <Article key={article.id} article={article} />;
+          }
+        })}
+      </div>
     </section>
   );
 };
