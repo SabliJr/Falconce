@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./SingleCoin.css";
 import axios from "axios";
 
@@ -6,7 +6,6 @@ import axios from "axios";
 import CoinHeader from "./CoinHeader";
 import CoinMoney from "./CoinMoney";
 import CoinDesc from "./CoinDesc";
-
 
 const SingleCoin = () => {
   const [coinInfo, setCoinInfo] = useState([]);

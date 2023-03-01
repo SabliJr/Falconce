@@ -3,8 +3,8 @@ import "./Navbar.css";
 import { useNavigate } from "react-router-dom";
 
 //Icons
-import { BiSearch } from "react-icons/bi";
 import { SiFalcon } from "react-icons/si";
+import Search from "./Search";
 
 const Navbar = () => {
   let navigate = useNavigate();
@@ -19,12 +19,7 @@ const Navbar = () => {
         <SiFalcon className='LogoIcon' />
         <h1 className='Logo'>Falconce</h1>
       </div>
-      <div className='MenuDiv'>
-        <div className='SearchDiv'>
-          <input type='text' placeholder='Crypto prices, news...' />
-          <BiSearch className='SearchIcon' />
-        </div>
-      </div>
+      <Search />
     </nav>
   );
 };
