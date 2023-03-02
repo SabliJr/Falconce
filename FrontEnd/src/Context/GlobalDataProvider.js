@@ -11,67 +11,67 @@ const GlobalDataProvider = ({ children }) => {
   const [searchCoin, setSearchCoin] = useState("");
   const [searchResult, setResult] = useState([]);
 
-  useEffect(() => {
-    let isMounted = true;
-    const fetchSearch = async () => {
-      try {
-        const response = await CoinGecko.get("/search", {
-          params: {
-            query: searchCoin,
-          },
-        });
+    useEffect(() => {
+      let isMounted = true;
+      const fetchSearch = async () => {
+        try {
+          const response = await CoinGecko.get("/search", {
+            params: {
+              query: searchCoin,
+            },
+          });
 
-        if (isMounted) {
-          setResult(response.data.coins);
+          if (isMounted) {
+            setResult(response.data.coins);
+          }
+        } catch (err) {
+          console.log(err);
         }
-      } catch (err) {
-        console.log(err);
+      };
+
+      if (searchCoin.length > 2) {
+        fetchSearch();
       }
-    };
 
-    if (searchCoin.length > 2) {
-      fetchSearch();
-    }
+      return () => {
+        isMounted = false;
+      };
+    }, [searchCoin]);
 
-    return () => {
-      isMounted = false;
-    };
-  }, [searchCoin]);
+    useEffect(() => {
+      axios
+        .get("http://localhost:8800/coins")
+        .then((res) => {
+          setCoinsData(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }, []);
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:8800/coins")
-      .then((res) => {
-        setCoinsData(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+    useEffect(() => {
+      axios
+        .get("http://localhost:8800/news")
+        .then((res) => {
+          setGetNews(res.data.news);
+        })
+        .then((err) => {
+          console.log(err);
+        });
+    }, []);
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:8800/news")
-      .then((res) => {
-        setGetNews(res.data.news);
-      })
-      .then((err) => {
-        console.log(err);
-      });
-  }, []);
-
-  return (
-    <dataContext.Provider
-      value={{
-        coinsData,
-        getNews,
-        searchCoin,
-        setSearchCoin,
-        searchResult,
-      }}>
-      {children}
-    </dataContext.Provider>
-  );
+    return (
+      <dataContext.Provider
+        value={{
+          coinsData,
+          getNews,
+          searchCoin,
+          setSearchCoin,
+          searchResult,
+        }}>
+        {children}
+      </dataContext.Provider>
+    );
 };
 
 export default GlobalDataProvider;
