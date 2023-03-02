@@ -65,13 +65,31 @@
 
 .PList {
     width: 25vw;
+    height: 90vh;
     position: absolute;
     right: 13rem;
     top: 5rem;
     background-color: hsl(180, 100%, 99%);
     z-index: 100;
-    border-radius: 1.2rem;
+    border-radius: 1rem;
+    overflow-y: scroll;
+    cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: #26272b79;
+    z-index: 99;
+    overscroll-behavior: contain
+}
+
+.removePanel {
+    display: none;
 }
 
 .searchNameDiv {
