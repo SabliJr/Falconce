@@ -7,7 +7,7 @@ const CryptoStatus = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8800/global-status")
+      .get("https://falconce-api.onrender.com/global-status")
       .then((res) => {
         setGlobalStatus(res.data);
       })
