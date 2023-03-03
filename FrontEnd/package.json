@@ -1,6 +1,7 @@
 {
   "name": "cryptoapp",
   "version": "0.1.0",
+  "homepage": "https://github.com/SabliJr/falconce",
   "private": true,
   "dependencies": {
     "@ant-design/plots": "^1.2.5",
@@ -8,23 +9,20 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.2.6",
-    "chart.js": "^4.2.1",
     "date-fns": "^2.29.3",
-    "echarts-for-react": "^3.0.2",
     "millify": "^5.0.1",
     "moment": "^2.29.4",
     "react": "^18.2.0",
-    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
     "react-paginate": "^8.1.4",
     "react-router-dom": "^6.8.1",
     "react-scripts": "5.0.1",
-    "recharts": "^2.4.3",
-    "victory": "^36.6.8",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -47,5 +45,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   }
 }
