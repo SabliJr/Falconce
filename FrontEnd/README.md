@@ -1,1 +1,0 @@
-This is a web app to track crypto and stocks latest prices build with react and couple APIs.
