@@ -10,7 +10,7 @@ import CoinDesc from "./CoinDesc";
 import { dataContext } from "../../Context/GlobalDataProvider";
 
 const SingleCoin = () => {
-  const { setIsLoading } = useContext(dataContext);
+  const { isLoading, setIsLoading } = useContext(dataContext);
   const [coinInfo, setCoinInfo] = useState([]);
   let getCoinId = window.location.pathname.split("/");
   let coinId = getCoinId[2];
@@ -29,9 +29,13 @@ const SingleCoin = () => {
 
   return (
     <>
-      <CoinHeader coin={coinInfo} />
-      <CoinMoney coin={coinInfo} />
-      <CoinDesc coin={coinInfo} />
+      {isLoading && (
+        <div>
+          <CoinHeader coin={coinInfo} />
+          <CoinMoney coin={coinInfo} />
+          <CoinDesc coin={coinInfo} />
+        </div>
+      )}
     </>
   );
 };
