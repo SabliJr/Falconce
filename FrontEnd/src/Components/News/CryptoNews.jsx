@@ -5,25 +5,23 @@ import { dataContext } from "../../Context/GlobalDataProvider";
 import Article from "./Article";
 
 const CryptoNews = () => {
-  const { getNews, coinsData } = useContext(dataContext);
+  const { getNews } = useContext(dataContext);
   const getNewsResult = Object.values(getNews);
 
   return (
     <>
-      {getNews && coinsData && (
-        <section className='newsSection'>
-          <h2 className='newsTitle'> Crypto News </h2>
-          <div className='newRap'>
-            {getNewsResult?.map((article) => {
-              if (article.imgURL === undefined) {
-                return null;
-              } else {
-                return <Article key={article.id} article={article} />;
-              }
-            })}
-          </div>
-        </section>
-      )}
+      <section className='newsSection'>
+        <h2 className='newsTitle'> Crypto News </h2>
+        <div className='newRap'>
+          {getNewsResult?.map((article) => {
+            if (article.imgURL === undefined) {
+              return null;
+            } else {
+              return <Article key={article.id} article={article} />;
+            }
+          })}
+        </div>
+      </section>
     </>
   );
 };

@@ -7,6 +7,7 @@ export const dataContext = createContext();
 const GlobalDataProvider = ({ children }) => {
   const [coinsData, setCoinsData] = useState([]);
   const [getNews, setGetNews] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const [searchCoin, setSearchCoin] = useState("");
   const [searchResult, setResult] = useState([]);
@@ -23,6 +24,7 @@ const GlobalDataProvider = ({ children }) => {
 
           if (isMounted) {
             setResult(response.data.coins);
+            setIsLoading(true);
           }
         } catch (err) {
           console.log(err);
@@ -43,6 +45,7 @@ const GlobalDataProvider = ({ children }) => {
         .get("https://falconce-api.onrender.com/coins")
         .then((res) => {
           setCoinsData(res.data);
+          setIsLoading(true);
         })
         .catch((err) => {
           console.log(err);
@@ -54,6 +57,7 @@ const GlobalDataProvider = ({ children }) => {
         .get("https://falconce-api.onrender.com/news")
         .then((res) => {
           setGetNews(res.data.news);
+          setIsLoading(true);
         })
         .then((err) => {
           console.log(err);
@@ -68,6 +72,8 @@ const GlobalDataProvider = ({ children }) => {
           searchCoin,
           setSearchCoin,
           searchResult,
+          isLoading,
+          setIsLoading,
         }}>
         {children}
       </dataContext.Provider>

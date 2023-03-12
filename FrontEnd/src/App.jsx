@@ -11,9 +11,9 @@ import Loader from "./Loader";
 import SearchData from "./Components/Navbar/SearchData";
 
 const App = () => {
-  const { coinsData, getNews } = useContext(dataContext);
+  const { isLoading } = useContext(dataContext);
 
-  return coinsData && getNews ? (
+  return isLoading ? (
     <Router>
       <div className='App'>
         <Navbar />

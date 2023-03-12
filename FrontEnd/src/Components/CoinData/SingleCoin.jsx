@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./SingleCoin.css";
 import axios from "axios";
 
@@ -7,7 +7,10 @@ import CoinHeader from "./CoinHeader";
 import CoinMoney from "./CoinMoney";
 import CoinDesc from "./CoinDesc";
 
+import { dataContext } from "../../Context/GlobalDataProvider";
+
 const SingleCoin = () => {
+  const { setIsLoading } = useContext(dataContext);
   const [coinInfo, setCoinInfo] = useState([]);
   let getCoinId = window.location.pathname.split("/");
   let coinId = getCoinId[2];
@@ -17,11 +20,12 @@ const SingleCoin = () => {
       .get(`https://falconce-api.onrender.com/coin?coinid=${coinId}`)
       .then((res) => {
         setCoinInfo(res.data);
+        setIsLoading(true);
       })
       .then((err) => {
         console.log(err);
       });
-  }, [coinId]);
+  }, [coinId, setIsLoading]);
 
   return (
     <>
