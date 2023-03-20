@@ -42,7 +42,7 @@ const GlobalDataProvider = ({ children }) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8800/coins")
+      .get("https://falconce.onrender.com/coins")
       .then((res) => {
         setCoinsData(res.data);
         setIsLoading(true);
@@ -54,7 +54,7 @@ const GlobalDataProvider = ({ children }) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8800/news")
+      .get("https://falconce.onrender.com/news")
       .then((res) => {
         setGetNews(res.data.news);
         setIsLoading(true);
