@@ -8,6 +8,7 @@ const app = express();
 app.use(
   cors({
     origin: "https://falconce.onrender.com/",
+    origin: "https://falconce.netlify.app/",
   })
 );
 
