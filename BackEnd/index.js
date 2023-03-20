@@ -2,7 +2,6 @@ const PORT = 8800;
 const axios = require("axios");
 const express = require("express");
 const cors = require("cors");
-// const { json } = require("stream/consumers");
 require("dotenv").config();
 
 const app = express();
@@ -127,4 +126,3 @@ app.get("/three-months", (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`server started running at port ${PORT}`));
-  

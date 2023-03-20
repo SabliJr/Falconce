@@ -12,57 +12,57 @@ const GlobalDataProvider = ({ children }) => {
   const [searchCoin, setSearchCoin] = useState("");
   const [searchResult, setResult] = useState([]);
 
-    useEffect(() => {
-      let isMounted = true;
-      const fetchSearch = async () => {
-        try {
-          const response = await CoinGecko.get("/search", {
-            params: {
-              query: searchCoin,
-            },
-          });
+  useEffect(() => {
+    let isMounted = true;
+    const fetchSearch = async () => {
+      try {
+        const response = await CoinGecko.get("/search", {
+          params: {
+            query: searchCoin,
+          },
+        });
 
-          if (isMounted) {
-            setResult(response.data.coins);
-            setIsLoading(true);
-          }
-        } catch (err) {
-          console.log(err);
+        if (isMounted) {
+          setResult(response.data.coins);
+          setIsLoading(true);
         }
-      };
-
-      if (searchCoin.length > 2) {
-        fetchSearch();
+      } catch (err) {
+        console.log(err);
       }
+    };
 
-      return () => {
-        isMounted = false;
-      };
-    }, [searchCoin]);
+    if (searchCoin.length > 2) {
+      fetchSearch();
+    }
 
-    useEffect(() => {
-      axios
-        .get("https://falconce-api.onrender.com/coins")
-        .then((res) => {
-          setCoinsData(res.data);
-          setIsLoading(true);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }, []);
+    return () => {
+      isMounted = false;
+    };
+  }, [searchCoin]);
 
-    useEffect(() => {
-      axios
-        .get("https://falconce-api.onrender.com/news")
-        .then((res) => {
-          setGetNews(res.data.news);
-          setIsLoading(true);
-        })
-        .then((err) => {
-          console.log(err);
-        });
-    }, []);
+  useEffect(() => {
+    axios
+      .get("http://localhost:8800/coins")
+      .then((res) => {
+        setCoinsData(res.data);
+        setIsLoading(true);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8800/news")
+      .then((res) => {
+        setGetNews(res.data.news);
+        setIsLoading(true);
+      })
+      .then((err) => {
+        console.log(err);
+      });
+  }, []);
 
     return (
       <dataContext.Provider

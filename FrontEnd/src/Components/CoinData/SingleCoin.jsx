@@ -1,12 +1,13 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import "./SingleCoin.css";
 import axios from "axios";
-import Loader from "../../Loader";
+import CircleLoader from "react-spinners/HashLoader";
 
 //Components
 import CoinHeader from "./CoinHeader";
 import CoinMoney from "./CoinMoney";
 import CoinDesc from "./CoinDesc";
+import TheFooter from "../Footer/TheFooter";
 
 const SingleCoin = () => {
   const [coinLoaded, setLoaded] = useState(false);
@@ -16,7 +17,7 @@ const SingleCoin = () => {
 
   useEffect(() => {
     axios
-      .get(`https://falconce-api.onrender.com/coin?coinid=${coinId}`)
+      .get(`http://localhost:8800/coin?coinid=${coinId}`)
       .then((res) => {
         setCoinInfo(res.data);
         setLoaded(true);
@@ -24,20 +25,28 @@ const SingleCoin = () => {
       .then((err) => {
         console.log(err);
       });
-  }, [coinId, setLoaded]);
+  }, [coinId]);
 
   return (
-    <>
+    <div>
       {coinLoaded ? (
-        <div>
+        <>
           <CoinHeader coin={coinInfo} />
           <CoinMoney coin={coinInfo} />
           <CoinDesc coin={coinInfo} />
-        </div>
+          <TheFooter />
+        </>
       ) : (
-        <Loader />
+        <CircleLoader
+          color='rgba(110, 214, 54, 1)'
+          cssOverride={{
+            position: "absolute",
+            top: "50%",
+            right: "50%",
+          }}
+        />
       )}
-    </>
+    </div>
   );
 };
 
