@@ -17,7 +17,7 @@ const SingleCoin = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8800/coin?coinid=${coinId}`)
+      .get(`https://falconce.onrender.com/coin?coinid=${coinId}`)
       .then((res) => {
         setCoinInfo(res.data);
         setLoaded(true);
