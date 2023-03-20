@@ -59,7 +59,7 @@ const GlobalDataProvider = ({ children }) => {
         setGetNews(res.data.news);
         setIsLoading(true);
       })
-      .then((err) => {
+      .catch((err) => {
         console.log(err);
       });
   }, []);
