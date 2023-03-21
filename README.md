@@ -1,4 +1,11 @@
-# CryptoApp
+# Falcone
+
+Falconce is a crypto prices & news tracking web app, where you can check the last-minute prices of the top 250 coins or you can search for any coin in the market. Plus, some latest news.
+
+I built this app with three APIs one for news and the other 2 from CoinMarketCap & CoinGecko for Crypto data. I had to use three APIs to get around the problem of the limitation of data of free tiers. It's live, the frontend is hosted on Netlify, and the backend is on render. 
+
+You can visit it from here:
+https://falconce.netlify.app
 
 
 # Getting Started with Create React App
