@@ -1,4 +1,4 @@
-# Falcone
+# Falconce
 
 Falconce is a crypto prices & news tracking web app, where you can check the last-minute prices of the top 250 coins or you can search for any coin in the market. Plus, some latest news.
 
