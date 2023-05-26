@@ -1,25 +1,3 @@
-# Falconce
-
-Falconce is a crypto prices & news tracking web app, where you can check the last-minute prices of the top 250 coins or you can search for any coin in the market. Plus, some latest news.
-
-I built this app with three APIs one for news and the other 2 from CoinMarketCap & CoinGecko for Crypto data. I had to use three APIs to get around the problem of the limitation of data of free tiers. It's live, the frontend is hosted on Netlify, and the backend is on render. 
-
-You can visit it from here:
-https://falconce.netlify.app
-
-
-# Why I buuilt the project this way
-My goal was to simulate a professional work environment
-
-- This application is somewhat similar to a lot of Crypto prices tracking apps.
-- I used git Branches, Pushes, and Pull Requests
-- I was initially intending to use Redux but I found React context API is suffices
-- The application fetches data from 3 different APIs with environmental variables
-- I used Node Js as the CoinMarketCap API doesn't accept a client fetch
-- My plan is to become a full-stack dev eventually, but for the moment I focus on the frontend. That's why I decided to use Node to a least get a basic knowledge of the backend.
-
-
-
 
 ## Available Scripts
 
